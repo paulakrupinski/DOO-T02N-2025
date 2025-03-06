@@ -68,7 +68,7 @@ public class CalculadoraPlantas {
         double valorFinal = precoTotal;
 
         if (quantidade > 10) {
-            desconto = precoTotal * 0.05;  // Desconto de 5%
+            desconto = precoTotal * 0.05;  
             valorFinal = precoTotal - desconto;
         }
 
