@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class CalculadoraPlantas {
     
-    // Classe interna para representar uma venda
+
     static class Venda {
         int quantidade;
         double precoUnitario;
@@ -20,7 +20,7 @@ public class CalculadoraPlantas {
         }
     }
 
-    // Lista para registrar as vendas
+
     static ArrayList<Venda> registroVendas = new ArrayList<>();
     
     public static void main(String[] args) {
@@ -67,13 +67,11 @@ public class CalculadoraPlantas {
         double desconto = 0.0;
         double valorFinal = precoTotal;
 
-        // Aplicando o desconto especial
         if (quantidade > 10) {
             desconto = precoTotal * 0.05;  // Desconto de 5%
             valorFinal = precoTotal - desconto;
         }
 
-        // Registrar a venda
         registrarVenda(quantidade, precoUnitario, precoTotal, desconto, valorFinal);
         
         System.out.printf("Preço total: R$ %.2f%n", precoTotal);
@@ -84,7 +82,7 @@ public class CalculadoraPlantas {
     }
 
     public static void registrarVenda(int quantidade, double precoUnitario, double precoTotal, double desconto, double valorFinal) {
-        // Criar um objeto de venda e adicionar ao registro
+
         Venda venda = new Venda(quantidade, precoUnitario, precoTotal, desconto, valorFinal);
         registroVendas.add(venda);
     }
