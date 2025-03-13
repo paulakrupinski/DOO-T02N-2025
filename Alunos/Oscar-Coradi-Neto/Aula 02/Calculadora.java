@@ -15,12 +15,14 @@ public class Calculadora {
         int quantidade = scanner.nextInt();
 
         System.out.println("Informe o valor da planta");
-        double valorPlanta = scanner.nextDouble();
-
-        
+        double valorPlanta = scanner.nextDouble();        
 
         double precoTotal = PrecoTotal(quantidade, valorPlanta);
         
+        if(quantidade>=10){
+            precoTotal = precoTotal * 0.05;   
+            System.out.println("O desconto foi aplicado!");
+        }
 
         boolean menu = true;
         while(menu){
