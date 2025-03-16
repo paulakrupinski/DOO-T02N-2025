@@ -46,9 +46,12 @@ public class Calculadora {
     }
 
     public static void imprimirRegistros() {
-        for (Produto produto : registros) {
-            System.out.println(produto);
+        if (!registros.isEmpty()) {
+            for (Produto produto : registros) {
+                System.out.println(produto);
+            }
         }
+        System.out.println();
     }
 
     public static void buscarVendasData() {
@@ -63,17 +66,16 @@ public class Calculadora {
                 for (Produto produto : registros) {
                     if (produto.getDate().equals(dataFormatada)) {
                         System.out.println(produto);
-                        System.out.println();
                     } else {
                         System.out.println("Nenhuma venda neste dia");
                         System.out.println();
                     }
                 }
+                System.out.println();
             } else {
                 System.out.println("Lista de vendas vazia!");
                 System.out.println();
             }
-
         } catch (DateTimeParseException e) {
             e.printStackTrace();
         }
