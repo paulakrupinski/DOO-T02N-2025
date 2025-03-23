@@ -1,4 +1,4 @@
-# Paradigma de Progrmação 
+# Paradigma de Programação 
 
 Paradigma de Programação refere-se a como o código é estruturado seguindo um conjunto de regras ou principíos já estabelecidos. Os Paradigmas de Programação são dividos em dois tópicos são eles : Imperativo e Declarativo.
 
@@ -10,7 +10,7 @@ Uma aplicação prática dos paradigmas de programação em nosso cotidiano seri
 
 ### Comparação de um código Prolog e Java de uma árvore familiar
 
-Este código em prolog refere-se a criação de uma árvore familiar onde nele definimos as fatos sobre os gêneros, sobre os pais e seus filhoas alem de definirmos as regras para sabermos a resposta sobre uma proposição (questão) exemplo: ?- father(X, mike). A resposta seria X = john
+Este código em prolog refere-se a criação de uma árvore familiar onde nele definimos os fatos sobre os gêneros, sobre os pais e seus filhos além de definirmos as regras para sabermos a resposta sobre uma proposição (questão) exemplo: ?- father(X, mike). A resposta seria X = john
 
 ``` Prolog
 % Definindo os fatos sobre os gêneros
