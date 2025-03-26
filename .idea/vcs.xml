@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Alunos/Felipe Valdivino Biava/Atividade Git/Aula-2---Atividade-Git" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Alunos/Felipe Valdivino Biava/Aula 3/Aula-3---Atividade-Java-2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Alunos/Felipe Valdivino Biava/Aula 4/Aula-4---Atividade-Java-3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Alunos/Felipe Valdivino Biava/Aula 5/Aula-5---Texto-sobre-paradigmas" vcs="Git" />
   </component>
 </project>
