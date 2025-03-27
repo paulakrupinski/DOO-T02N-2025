@@ -1,8 +1,11 @@
+import java.text.ParseException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CalculadoraUpgrade {
+public class CalculadoraUpgrade2 {
 
     public static Scanner sc = new Scanner(System.in);
 
@@ -43,6 +46,7 @@ public class CalculadoraUpgrade {
             System.out.println("[1] Calcular preço total | total R$" + valorTotal);
             System.out.println("[2] Calcular Troco");
             System.out.println("[3] Visualizar registros");
+            System.out.println("[4] Buscar vendas por data");
             System.out.println("[0] Sair");
             System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
 
@@ -63,6 +67,9 @@ public class CalculadoraUpgrade {
                 for (int i = 0; i < registroVendas.size(); i++) {
                     System.out.println(registroVendas.get(i).toString());
                 }
+                break;
+            case 4:
+                buscarVendaPorData();
                 break;
             case 0:
                 flagMenu = false;
@@ -94,6 +101,10 @@ public class CalculadoraUpgrade {
 
         novaVenda = new VendaUpgrade2(quantidade, valorTotal, valorDesconto);
         registroVendas.add(novaVenda);
+
+        quantidade = 0;
+        valorTotal = 0;
+        valorDesconto = 0;
     }
 
     public static boolean iniciarNovaVenda() {
@@ -105,10 +116,26 @@ public class CalculadoraUpgrade {
         resp = sc.nextInt();
         sc.nextLine();
 
-        if (resp == 1) {
-            return true;
+        return resp == 1;
+
+    }
+
+    public static void buscarVendaPorData() {
+        System.out.println("Digite a data para busca: [dd/MM] ");
+        String dataPesquisa = sc.next();
+        int vendasNaData = 0;
+
+        for (VendaUpgrade2 venda : registroVendas) {
+            if (venda.getData().equals(dataPesquisa)) {
+                System.out.println(venda.toString());
+                vendasNaData++;
+            }
+        }
+
+        if (vendasNaData == 0) {
+            System.out.println("Sem registros na data informada");
         } else {
-            return false;
+            System.out.println("Total de vendas na data informada: " + vendasNaData);
         }
 
     }
