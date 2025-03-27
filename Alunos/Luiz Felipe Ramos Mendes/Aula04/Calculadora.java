@@ -18,7 +18,13 @@ public class Calculadora {
         String data = scan.nextLine();
 
         int valorTotal = valorPlanta * quantPlanta;
-        double desconto = (quantPlanta > 10) ? valorTotal * 0.05 : 0;
+
+
+        double desconto = 0;
+        if (quantPlanta > 10) {
+            desconto = valorTotal * 0.05;
+        }
+
         double valorComDesconto = valorTotal - desconto;
 
         historicoVendas.add(new Venda(quantPlanta, valorPlanta, valorTotal, desconto, valorComDesconto, data));
