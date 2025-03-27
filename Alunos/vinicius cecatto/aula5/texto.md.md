@@ -46,3 +46,18 @@ public class VerificaNumero {
         scanner.close();
     }
 }
+```
+
+### Código em Prolog (declarativo)
+```Prolog
+% Definição da lista
+lista([1, 2, 3, 4, 5]).
+
+% Predicado para verificar se um número pertence à lista
+pertence(X, [X|_]).
+pertence(X, [_|Y]) :- pertence(X, Y).
+
+% Consulta
+:- lista(L),
+   write('Digite um número: '), read(N),
+   (pertence(N, L) -> writeln('O número está na lista.') ; writeln('O número não está na lista.')).
