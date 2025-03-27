@@ -1,29 +1,43 @@
 # Paradigmas de Programação: Imperativo vs. Declarativo
 
-A programação, ao longo de sua evolução, tem sido moldada por diversos paradigmas, cada um com sua própria filosofia e abordagem. Dentre eles, os paradigmas **imperativo** e **declarativo** se destacam como os mais influentes.
-
-No paradigma **imperativo**, o foco reside na descrição detalhada da sequência de passos necessários para alcançar um objetivo. O programador define explicitamente *como* o computador deve executar cada ação, utilizando estruturas de controle como loops, condicionais e variáveis mutáveis. Linguagens como C, Java e Python são exemplos clássicos desse paradigma.
-
-Por outro lado, o paradigma **declarativo** prioriza a descrição do *que* deve ser feito, sem especificar o *como*. A ênfase está na lógica e nas relações entre os dados, utilizando conceitos como imutabilidade e recursão. Prolog e SQL são exemplos notáveis desse estilo.
+A programação pode ser abordada por diferentes paradigmas, sendo os mais proeminentes o **imperativo** e o **declarativo**. No paradigma **imperativo**, o foco está na definição explícita da sequência de passos necessários para alcançar um objetivo, utilizando estruturas como loops, condicionais e variáveis mutáveis. Linguagens como C, Java e Python frequentemente seguem esse modelo. Por outro lado, o paradigma **declarativo** enfatiza a descrição do que deve ser feito, sem especificar como. Aqui, prevalecem conceitos como imutabilidade e recursão, sendo Prolog e SQL exemplos desse estilo.
 
 ## Comparação entre Java (Imperativo) e Prolog (Declarativo)
 
-A seguir, comparamos dois trechos de código que verificam a paridade de um número, um em Java e outro em Prolog, ilustrando as diferenças entre os paradigmas.
+A seguir, comparamos dois trechos de código que verificam se um número é par, um em Java e outro em Prolog.
 
 ### Código em Java (Paradigma Imperativo)
-
 ```java
-public class VerificadorParidade {
-    public static boolean ehNumeroPar(int numero) {
-        return numero % 2 == 0; // Verifica se o resto da divisão por 2 é zero
+public class Paridade {
+    public static boolean ehPar(int numero) {
+        return numero % 2 == 0;
     }
-
+    
     public static void main(String[] args) {
-        int numeroTeste = 4;
-        if (ehNumeroPar(numeroTeste)) { // Verifica se o número é par
-            System.out.println(numeroTeste + " é par.");
+        int numero = 4;
+        if (ehPar(numero)) {
+            System.out.println(numero + " é par.");
         } else {
-            System.out.println(numeroTeste + " é ímpar.");
+            System.out.println(numero + " é ímpar.");
         }
     }
 }
+```
+**Descrição:**
+- O código define uma função `ehPar` que recebe um número inteiro e retorna `true` se o resto da divisão por 2 for zero.
+- No `main`, um número é testado e uma estrutura condicional (`if-else`) imprime o resultado na tela.
+- A abordagem é sequencial e explícita, definindo todas as operações de maneira detalhada.
+
+### Código em Prolog (Paradigma Declarativo)
+```prolog
+eh_par(N) :- N mod 2 =:= 0.
+
+?- eh_par(4).
+```
+**Descrição:**
+- A regra `eh_par(N)` define que um número é par se a condição `N mod 2 =:= 0` for verdadeira.
+- No interpretador Prolog, consulta-se `?- eh_par(4).`, e a resposta será `true` ou `false`.
+- Diferente do Java, o código não especifica como executar a verificação, apenas expressa a relação lógica entre os elementos.
+
+## Conclusão
+O paradigma imperativo, exemplificado pelo Java, descreve detalhadamente os passos necessários para determinar a paridade de um número. Já no paradigma declarativo, representado pelo Prolog, apenas a propriedade matemática do número par é definida, deixando para o motor de inferência da linguagem a responsabilidade de avaliar a consulta. Ambos os paradigmas possuem aplicações distintas e são escolhidos conforme a necessidade do problema a ser resolvido.
