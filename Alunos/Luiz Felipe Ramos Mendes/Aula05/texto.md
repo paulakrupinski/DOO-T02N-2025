@@ -1,15 +1,19 @@
-# Paradigmas de Programação: Imperativo e Declarativo
+### Paradigmas de Programação: Imperativo e Declarativo
 
 ## Introdução
-Na programação, dois paradigmas amplamente utilizados são o **imperativo** e o **declarativo**. Cada um possui abordagens distintas para resolver problemas de programação, e isso se reflete diretamente na maneira como os programadores escrevem e estruturam o código. O paradigma **imperativo** se foca no "como" as coisas são feitas, ou seja, no controle detalhado do fluxo de execução do programa. Já o paradigma **declarativo** se concentra no "o que" deve ser feito, permitindo que o sistema decida como executar as instruções, com menos intervenção do programador.
+Na programação, dois paradigmas amplamente utilizados são o **imperativo** e o **declarativo**. 
+**Imperativo**: Foca no "como" fazer as coisas, ou seja, fazendo o passo a passo
+**Declarativo**: Foca no "o que" deve ser feito, deixando que o sistema descubra como resolver o problema.
+
+
 
 ## Paradigma Imperativo (Java)
+No paradigma imperativo, o código segue uma sequência de comandos bem definida.
 
-O paradigma imperativo é caracterizado pela sequência de comandos que descrevem precisamente como uma tarefa deve ser realizada. No exemplo abaixo, temos um código em **Java**, uma linguagem que segue o paradigma imperativo:
 
 ### Exemplo de código em Java:
 
-```java
+````java
 public class Soma {
     public static void main(String[] args) {
         int a = 5;
@@ -18,43 +22,46 @@ public class Soma {
         System.out.println("A soma é: " + resultado);
     }
 }
-Como funciona?
-Primeiramente, o código declara duas variáveis, a e b, e as inicializa com os valores 5 e 10, respectivamente.
+````
 
-Em seguida, realiza-se a soma desses dois valores e o resultado é armazenado na variável resultado.
+### Como funciona?
+**1**. Declaramos as variáveis a e b e atribuimos valores a elas.
+**2**. Somamos os valores e armazenamos em resultado.
+**3**. Exibimos o resultado na tela.
 
-Por fim, o código exibe o valor de resultado na tela.
+Aqui, o programador tem controle total sobre cada passo, dizendo como a soma deve ser feita.
 
-Este exemplo reflete o estilo imperativo pois o programador controla explicitamente como o cálculo da soma deve ocorrer e como os resultados são apresentados. Cada passo é claramente indicado pelo código.
+## Paradigma Declarativo (Prolog)
 
-Paradigma Declarativo (Prolog)
-O paradigma declarativo, por outro lado, é focado na descrição do que deve ser feito, sem se preocupar diretamente com o passo a passo de como isso será feito. O Prolog, uma linguagem lógica, segue esse paradigma.
+No paradigma declarativo, apenas dizemos o que queremos, e o sistema resolve o resto.
 
-Exemplo de código em Prolog:
-prolog
-Copiar
+### Exemplo de código em Prolog:
+
+````prolog
+
 soma(A, B, Resultado) :- Resultado is A + B.
 
 ?- soma(5, 10, R).
-Como funciona?
-O código define uma relação entre as variáveis A, B e Resultado, onde Resultado é a soma de A e B.
+````
 
-Quando perguntamos ?- soma(5, 10, R)., o Prolog processa a consulta e retorna o valor de R, que é 15.
+### Como funciona?
+**1**.Definimos que Resultado é a soma de A e B.
+**2**.Quando perguntamos ?- soma(5, 10, R)., o Prolog responde que R = 15.
 
-No código acima, o programador não precisa especificar como a soma deve ser feita ou controlar o fluxo da execução. O Prolog resolve a tarefa com base na declaração da relação, o que demonstra a natureza declarativa dessa linguagem.
+Aqui, não dizemos como calcular, apenas declaramos a relação, e o sistema resolve.
 
-Comparação entre os Paradigmas
-1. Controle do Fluxo
-No paradigma imperativo (Java), o programador define exatamente como cada passo será realizado. Há um controle explícito sobre o fluxo de execução, o que torna o código mais detalhado e sequencial.
 
-No paradigma declarativo (Prolog), o programador descreve a lógica do problema, mas deixa o sistema decidir como a solução será alcançada. O código é mais conciso e foca em expressar a relação entre as variáveis.
+## Comparação entre os Paradigmas
 
-2. Alteração de Estado
-O paradigma imperativo (Java) lida com a alteração direta de variáveis e o gerenciamento do estado do programa. O programador manipula explicitamente os dados e controla o estado do sistema em cada momento.
+### 1. Controle do Fluxo
+- **Imperativo (Java)**: O programador define passo a passo como a tarefa será executada.
+.
+- **Declarativo (Prolog)**: O programador diz o que quer, e o sistema decide como resolver.
 
-O paradigma declarativo (Prolog), por outro lado, não exige manipulação explícita do estado. As variáveis são definidas em termos de relações, e o sistema é responsável por resolver o problema.
+### 2. Alteração de Estado
+- **Imperativo (Java)**: Manipula diretamente variáveis e o estado do programa.
+- **Declarativo (Prolog)**: Não altera o estado diretamente; apenas define relações entre os valores.
 
-3. Enfoque
-O imperativo foca no "como" fazer as coisas. O código descreve a sequência exata de operações para alcançar o objetivo.
-
-O declarativo foca no "o que" deve ser feito. O programador descreve a solução desejada e o sistema cuida do resto.
+### 3. Enfoque
+- **Imperativo**: Explica "como" o processo deve acontecer.
+- **Declarativo**: Explica "o que" precisa ser feito, deixando os detalhes para o sistema.
