@@ -10,7 +10,7 @@ Uma aplicação prática dos paradigmas de programação em nosso cotidiano seri
 
 ### Comparação de um código Prolog e Java de uma árvore familiar
 
-Este código em prolog refere-se a criação de uma árvore familiar onde nele definimos os fatos sobre os gêneros, sobre os pais e seus filhos além de definirmos as regras para sabermos a resposta sobre uma proposição (questão) exemplo: ?- father(X, mike). A resposta seria X = john
+Este código em prolog refere-se a criação de uma árvore familiar onde nele definimos as fatos sobre os gêneros, sobre os pais e seus filhos alem de definirmos as regras para sabermos a resposta sobre uma proposição (questão) exemplo: ?- father(X, mike). A resposta seria X = john
 
 ``` Prolog
 % Definindo os fatos sobre os gêneros
@@ -194,3 +194,4 @@ public class Main {
 }
 ```
 Por fim realizamos a mesma pergunta feita em prolog, agora no Java para descobrirmos quem é o pai de Mike.
+
