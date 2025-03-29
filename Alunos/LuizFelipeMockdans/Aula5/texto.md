@@ -2,70 +2,49 @@
 
 ## Introdução
 
-Os paradigmas de programação são abordagens distintas para estruturar e desenvolver soluções computacionais. Dois paradigmas amplamente utilizados são o imperativo e o declarativo.
+Os paradigmas de programação são modelos que definem a abordagem utilizada para resolver problemas computacionais. Dois paradigmas amplamente utilizados são o imperativo e o declarativo. O paradigma imperativo foca em instruções sequenciais que modificam o estado do programa, enquanto o paradigma declarativo descreve o que deve ser feito, deixando a execução sob responsabilidade do sistema.
 
 ## Paradigma Imperativo
 
-O paradigma imperativo foca em como a computação deve ser realizada. Ele define sequências de comandos e mudanças de estado explícitas. Linguagens como Java, C e Python seguem esse modelo, utilizando variáveis, loops e estruturas condicionais para controlar o fluxo do programa.
+O paradigma imperativo é baseado em comandos sequenciais que alteram diretamente o estado do programa. Ele segue a lógica de "como fazer", utilizando conceitos como atribuição de variáveis, loops e estruturas condicionais. Linguagens como C, Java e Python seguem essa abordagem.
 
-## Paradigma Declarativo
+### Exemplo de código em Java para calcular o fatorial de um número:
 
-O paradigma declarativo, por outro lado, se concentra no que deve ser feito, sem especificar detalhadamente o fluxo de execução. Esse paradigma inclui linguagens funcionais e lógicas, como Prolog e Haskell, onde o programador descreve o problema e o ambiente de execução se encarrega de encontrar a solução.
-
-Comparação entre Java e Prolog
-
-A seguir, apresentamos dois trechos de código que resolvem o mesmo problema: verificar se um número está presente em uma lista.
-
-### Código em Java (Paradigma Imperativo)
-
-```java
-
-public class BuscaNumero {
-    public static boolean contem(int[] lista, int numero) {
-        for (int elemento : lista) {
-            if (elemento == numero) {
-                return true;
-            }
+```java 
+public class Fatorial {
+    public static int calcularFatorial(int n) {
+        int resultado = 1;
+        for (int i = 1; i <= n; i++) {
+            resultado *= i;
         }
-        return false;
+        return resultado;
     }
-
+    
     public static void main(String[] args) {
-        int[] numeros = {1, 2, 3, 4, 5};
-        System.out.println(contem(numeros, 3)); // true
-        System.out.println(contem(numeros, 6)); // false
+        int numero = 5;
+        System.out.println("Fatorial de " + numero + " é " + calcularFatorial(numero));
     }
 }
 ```
-### Análise do Código em Java
 
-O programa segue um fluxo controlado explicitamente com um loop (for) que percorre a lista.
+Neste exemplo, a função calcularFatorial utiliza um laço for para iterar e multiplicar sucessivamente os números até n, modificando a variável resultado em cada iteração.
 
-Utiliza variáveis e um retorno explícito (return true ou return false).
+## Paradigma Declarativo
 
-O programador precisa definir cada passo do processo de busca na lista.
+O paradigma declarativo enfatiza "o que deve ser feito" ao invés de "como fazer". Nele, o programador define regras e relações lógicas, sem especificar detalhadamente o fluxo de controle. Linguagens como SQL, Prolog e Haskell são exemplos de abordagem declarativa.
 
-### Código em Prolog (Paradigma Declarativo)
+### Exemplo de código em Prolog para calcular o fatorial:
 
-```prolog
+fatorial(0,1).
+fatorial(N,F) :-
+    N > 0,
+    N1 is N - 1,
+    fatorial(N1, F1),
+    F is N * F1.
 
-membro(X, [X|_]).
-membro(X, [_|T]) :- membro(X, T).
+Aqui, o fatorial é definido recursivamente: o caso base (
+fatorial(0,1)) estabelece que o fatorial de 0 é 1. Para N > 0, o programa calcula o fatorial de N-1 antes de multiplicá-lo por N. O interpretador do Prolog resolve a consulta automaticamente seguindo as regras definidas.
 
-?- membro(3, [1, 2, 3, 4, 5]). % true
-?- membro(6, [1, 2, 3, 4, 5]). % 
-```
+## Comparativo
 
-### Análise do Código em Prolog
-
-Define-se relações lógicas em vez de comandos sequenciais.
-
-A recursão é usada para verificar se o elemento está na lista.
-
-O mecanismo de inferência do Prolog busca automaticamente uma solução com base nas regras definidas.
-
-O programador descreve o problema, mas não precisa especificar como a busca ocorre internamente.
-
-## Conclusão
-
-O paradigma imperativo (exemplificado pelo Java) exige que o programador detalhe cada etapa do processo, enquanto o paradigma declarativo (exemplificado pelo Prolog) permite descrever regras e relações, deixando a resolução para o interpretador. A escolha entre esses paradigmas depende do problema a ser resolvido e das preferências do desenvolvedor.
+Em resumo, o paradigma imperativo detalha a sequência de passos necessária para atingir um resultado, enquanto o paradigma declarativo expressa o problema por meio de regras e relações, deixando a resolução para o sistema. Ambos são eficientes em seus contextos, e a escolha depende das necessidades do projeto e das características desejadas na implementação.
