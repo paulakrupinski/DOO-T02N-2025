@@ -3,81 +3,64 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Loja loja = new Loja("Plantas da Dona Gabrielinha", "Gabrielinha LTDA", "00.000.000/0001-00", "São Paulo", "Centro", "Rua das Flores");
+        Loja loja = new Loja("My Plant", "My Plant LTDA", "12.345.678/0001-99", "Centro", "Comercial", "Rua das Flores");
 
-        int opcao;
-        do {
-            System.out.println("\nMenu:");
-            System.out.println("1 - Apresentar Loja");
-            System.out.println("2 - Adicionar Vendedor");
-            System.out.println("3 - Adicionar Cliente");
-            System.out.println("4 - Mostrar Quantidade de Clientes");
-            System.out.println("5 - Mostrar Quantidade de Vendedores");
-            System.out.println("6 - Sair");
-            System.out.print("Escolha uma opção: ");
-            opcao = scanner.nextInt();
-            scanner.nextLine(); 
+        while (true) {
+            System.out.println("\n--- Menu ---");
+            System.out.println("1. Adicionar Vendedor");
+            System.out.println("2. Adicionar Cliente");
+            System.out.println("3. Exibir Informacoes da Loja");
+            System.out.println("4. Sair");
+            System.out.print("Escolha uma opcao: ");
+            int opcao = scanner.nextInt();
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
-                    loja.apresentarSe();
-                    break;
-
-                case 2:
-                    System.out.print("Nome do vendedor: ");
-                    String nomeVendedor = scanner.nextLine();
-                    System.out.print("Idade do vendedor: ");
-                    int idadeVendedor = scanner.nextInt();
-                    scanner.nextLine(); 
-                    System.out.print("Cidade do vendedor: ");
-                    String cidadeVendedor = scanner.nextLine();
-                    System.out.print("Bairro do vendedor: ");
-                    String bairroVendedor = scanner.nextLine();
-                    System.out.print("Rua do vendedor: ");
-                    String ruaVendedor = scanner.nextLine();
-                    System.out.print("Salário base do vendedor: ");
+                    System.out.print("Nome do Vendedor: ");
+                    String nomeV = scanner.nextLine();
+                    System.out.print("Idade: ");
+                    int idadeV = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.print("Cidade: ");
+                    String cidadeV = scanner.nextLine();
+                    System.out.print("Bairro: ");
+                    String bairroV = scanner.nextLine();
+                    System.out.print("Rua: ");
+                    String ruaV = scanner.nextLine();
+                    System.out.print("Salario Base: ");
                     double salarioBase = scanner.nextDouble();
-
-                    Vendedor vendedor = new Vendedor(nomeVendedor, idadeVendedor, loja, cidadeVendedor, bairroVendedor, ruaVendedor, salarioBase);
-                    loja.adicionarVendedor(vendedor);
+                    double[] salarios = {salarioBase, salarioBase + 200, salarioBase + 100};
+                    loja.adicionarVendedor(new Vendedor(nomeV, idadeV, loja.getNomeFantasia(), cidadeV, bairroV, ruaV, salarioBase, salarios));
                     System.out.println("Vendedor adicionado com sucesso!");
                     break;
-
-                case 3:
-                    System.out.print("Nome do cliente: ");
-                    String nomeCliente = scanner.nextLine();
-                    System.out.print("Idade do cliente: ");
-                    int idadeCliente = scanner.nextInt();
-                    scanner.nextLine(); 
-                    System.out.print("Cidade do cliente: ");
-                    String cidadeCliente = scanner.nextLine();
-                    System.out.print("Bairro do cliente: ");
-                    String bairroCliente = scanner.nextLine();
-                    System.out.print("Rua do cliente: ");
-                    String ruaCliente = scanner.nextLine();
-
-                    Cliente cliente = new Cliente(nomeCliente, idadeCliente, cidadeCliente, bairroCliente, ruaCliente);
-                    loja.adicionarCliente(cliente);
+                case 2:
+                    System.out.print("Nome do Cliente: ");
+                    String nomeC = scanner.nextLine();
+                    System.out.print("Idade: ");
+                    int idadeC = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.print("Cidade: ");
+                    String cidadeC = scanner.nextLine();
+                    System.out.print("Bairro: ");
+                    String bairroC = scanner.nextLine();
+                    System.out.print("Rua: ");
+                    String ruaC = scanner.nextLine();
+                    loja.adicionarCliente(new Cliente(nomeC, idadeC, cidadeC, bairroC, ruaC));
                     System.out.println("Cliente adicionado com sucesso!");
                     break;
-
+                case 3:
+                    loja.apresentarse();
+                    System.out.println("Total de clientes: " + loja.contarClientes());
+                    System.out.println("Total de vendedores: " + loja.contarVendedores());
+                    break;
                 case 4:
-                    System.out.println("Quantidade de clientes cadastrados: " + loja.contarClientes());
-                    break;
-
-                case 5:
-                    System.out.println("Quantidade de vendedores cadastrados: " + loja.contarVendedores());
-                    break;
-
-                case 6:
-                    System.out.println("Saindo do sistema...");
-                    break;
-
+                    System.out.println("Saindo...");
+                    scanner.close();
+                    return;
                 default:
-                    System.out.println("Opção inválida!");
+                    System.out.println("Opcao invalida!");
             }
-        } while (opcao != 6);
-
-        scanner.close();
+        }
     }
 }

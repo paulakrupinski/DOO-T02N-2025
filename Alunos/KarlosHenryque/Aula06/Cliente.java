@@ -1,7 +1,9 @@
 public class Cliente {
-    String nome;
-    int idade;
-    String cidade, bairro, rua;
+    private String nome;
+    private int idade;
+    private String cidade;
+    private String bairro;
+    private String rua;
 
     public Cliente(String nome, int idade, String cidade, String bairro, String rua) {
         this.nome = nome;
@@ -11,7 +13,11 @@ public class Cliente {
         this.rua = rua;
     }
 
-    public void apresentarSe() {
+    public void apresentarse() {
         System.out.println("Nome: " + nome + ", Idade: " + idade);
     }
+
+    // Getters
+    public String getNome() { return nome; }
+    public int getIdade() { return idade; }
 }

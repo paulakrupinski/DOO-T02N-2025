@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Loja {
     private String nomeFantasia;
@@ -8,8 +7,8 @@ public class Loja {
     private String cidade;
     private String bairro;
     private String rua;
-    private List<Vendedor> vendedores;
-    private List<Cliente> clientes;
+    private ArrayList<Vendedor> vendedores = new ArrayList<>();
+    private ArrayList<Cliente> clientes = new ArrayList<>();
 
     public Loja(String nomeFantasia, String razaoSocial, String cnpj, String cidade, String bairro, String rua) {
         this.nomeFantasia = nomeFantasia;
@@ -18,12 +17,6 @@ public class Loja {
         this.cidade = cidade;
         this.bairro = bairro;
         this.rua = rua;
-        this.vendedores = new ArrayList<>();
-        this.clientes = new ArrayList<>();
-    }
-
-    public String getNomeFantasia() {
-        return nomeFantasia;
     }
 
     public void adicionarVendedor(Vendedor vendedor) {
@@ -42,9 +35,9 @@ public class Loja {
         return vendedores.size();
     }
 
-    public void apresentarSe() {
-        System.out.println("Nome Fantasia: " + nomeFantasia);
-        System.out.println("CNPJ: " + cnpj);
-        System.out.println("Endereço: " + rua + ", " + bairro + ", " + cidade);
+    public void apresentarse() {
+        System.out.println("Nome Fantasia: " + nomeFantasia + ", CNPJ: " + cnpj + ", Endereco: " + cidade + ", " + bairro + ", " + rua);
     }
+
+    public String getNomeFantasia() { return nomeFantasia; }
 }
