@@ -14,6 +14,7 @@ public class Cliente {
     }
 
     public void apresentarse() {
+<<<<<<< HEAD
         System.out.println("Cliente: " + nome);
         System.out.println("Idade: " + idade);
         System.out.println("Cidade: " + cidade);
@@ -21,3 +22,12 @@ public class Cliente {
         System.out.println("Rua: " + rua);
     }
 }
+=======
+        System.out.println("Nome: " + nome + ", Idade: " + idade);
+    }
+
+    // Getters
+    public String getNome() { return nome; }
+    public int getIdade() { return idade; }
+}
+>>>>>>> 81b82703e40058f8f27258b38f55beb365e243e0
