@@ -30,7 +30,7 @@ public class Vendedor {
         return soma / salariosRecebidos.length;
     }
 
-    public double calcularBonus() {
+    public double calcularBonus() { //Método para calcular o bonus
         return salarioBase * 0.2;
     }
 }
