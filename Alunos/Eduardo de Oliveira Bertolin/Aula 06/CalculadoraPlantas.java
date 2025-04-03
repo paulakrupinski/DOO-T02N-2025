@@ -1,18 +1,19 @@
 import java.util.Scanner;
 
-class Vendedor {
-    // Atributos
-    private String nome;
-    private int idade;
-    private String loja;
-    private String cidade;
-    private String bairro;
-    private String rua;
-    private double salarioBase;
-    private double[] salarioRecebido;
 
-    // Construtor
-    public Vendedor(String nome, int idade, String loja, String cidade, String bairro, String rua, double salarioBase) {
+class Vendedor {
+    
+    String nome;
+    int idade;
+    String loja;
+    String cidade;
+    String bairro;
+    String rua;
+    double salarioBase;
+    double[] salarioRecebido = {1.500, 1.600, 1.700};
+
+    public Vendedor(String nome, int idade, String loja, String cidade,
+            String bairro, String rua, double salarioBase) {
         this.nome = nome;
         this.idade = idade;
         this.loja = loja;
@@ -20,10 +21,8 @@ class Vendedor {
         this.bairro = bairro;
         this.rua = rua;
         this.salarioBase = salarioBase;
-        this.salarioRecebido = new double[3]; // Inicializando o array com 3 lançamentos de salários
     }
 
-    // Métodos
 
     public void apresentarse() {
         System.out.println("Nome: " + nome);
@@ -47,7 +46,8 @@ class Vendedor {
         if (mes >= 1 && mes <= 3) {
             salarioRecebido[mes - 1] = salario;
         } else {
-            System.out.println("Mês inválido! O salário pode ser registrado apenas nos 3 primeiros meses.");
+            System.out.println("Mês inválido! O salário pode ser registrado "
+                    + "apenas nos 3 primeiros meses.");
         }
     }
 }
