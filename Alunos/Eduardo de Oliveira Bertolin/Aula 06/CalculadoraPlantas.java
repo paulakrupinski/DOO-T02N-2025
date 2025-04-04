@@ -1,5 +1,15 @@
 import java.util.Scanner;
 
+class Gerente {
+    String nome;
+    int idade;
+    String loja;
+    String cidade;
+    String bairro;
+    String rua;
+    double salarioBase;
+    double[] salarioRecebido = {2.500, 2.600, 2.700};
+}
 
 class Vendedor {
     
@@ -150,7 +160,8 @@ public class CalculadoraPlantas {
                     int diaConsulta = scanner.nextInt();
                     int vendasDoDia = consultarVendas(mesConsulta, diaConsulta);
                     if (vendasDoDia != -1) {
-                        System.out.println("Quantidade de vendas no dia " + diaConsulta + "/" + mesConsulta + ": " + vendasDoDia + "\n");;
+                        System.out.println("Quantidade de vendas no dia " + 
+                                diaConsulta + "/" + mesConsulta + ": " + vendasDoDia + "\n");
                     }
                     break;
                 
