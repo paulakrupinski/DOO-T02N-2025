@@ -20,7 +20,7 @@ class Loja {
 
         System.out.println("Digite a idade do vendedor:");
         int idade = scanner.nextInt();
-        scanner.nextLine();  // Consume the newline character
+        scanner.nextLine();  
 
         System.out.println("Digite o nome da loja:");
         String loja = scanner.nextLine();
