@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.util.Scanner;
 
 public class Cliente extends Pessoa {
     public Cliente(String nome, int idade, Endereco endereco) {
