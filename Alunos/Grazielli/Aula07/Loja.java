@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.util.Scanner;
 
 public class Loja {
     String nomeFantasia, razaoSocial, cnpj;
