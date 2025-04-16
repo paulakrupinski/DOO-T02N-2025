@@ -1,4 +1,4 @@
-package aula07;
+package aula7;
 
 import java.util.ArrayList;
 

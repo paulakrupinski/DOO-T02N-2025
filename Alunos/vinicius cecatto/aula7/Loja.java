@@ -1,11 +1,7 @@
-package aula07;
+package aula7;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import aula07.Cliente;
-import aula07.Vendedor;
-import aula07.Endereco;
 
 public class Loja {
 
