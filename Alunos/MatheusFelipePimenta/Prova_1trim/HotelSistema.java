@@ -9,6 +9,8 @@ public class HotelSistema {
         Scanner sc = new Scanner(System.in);
         int opcao;
         do {
+
+            
             
             System.out.println(" \nEscolha uma opção do menu: \n");
             System.out.println("1. Cadastrar cliente");
@@ -17,7 +19,7 @@ public class HotelSistema {
             System.out.println("4. Check-in");
             System.out.println("5. Check-out");
             System.out.println("6. Verificar disponibilidade");
-            System.out.println("0. Sair \n");
+            System.out.println("Sair \n");
           
             System.out.print("Opção: ");
             opcao = sc.nextInt();
