@@ -111,7 +111,7 @@ public class HotelSistema {
         if (quarto != null && quarto.isDisponivel()) {
             System.out.println("Quarto disponível.\n");
         } else {
-            System.out.println("Quarto ocupado ou não existe.\n");
+           System.out.println("Quarto ocupado ou cheio");
         }
     }
 }
