@@ -1,35 +1,32 @@
 package Alunos.FelipeHeringer.Aula09;
 
-public class Calculdora {
-    private double num1;
-    private double num2;
+public class Calculadora {
 
-    public Calculdora(double num1, double num2){
-        this.num1 = num1;
-        this.num2 = num2;
+    public Calculadora(){
+
     }
 
-    private double somarNumeros(double num1, double num2){
+    protected double somarNumeros(double num1, double num2){
         System.out.println("Realizando a soma dos numeros: " + num1 + " " + num2);
 
         return num1 + num2;
 
     }
 
-    private double subtrairNumeros(double num1, double num2){
+    protected double subtrairNumeros(double num1, double num2){
         System.out.println("Realizando a subtração dos numeros: " + num1 + " " + num2);
 
         return num1 - num2;
     }
 
-    private double multiplicarNumeros(double num1, double num2){
+    protected double multiplicarNumeros(double num1, double num2){
         System.out.println("Realizando a multiplicação dos numeros: " + num1 + " " + num2);
 
         return num1 * num2;
 
     }
 
-    private double dividirNumeros(double num1, double num2) {
+    protected double dividirNumeros(double num1, double num2) {
         System.out.println("Realizando a divisão dos numeros: " + num1 + " " + num2);
 
         if(num2 == 0){
