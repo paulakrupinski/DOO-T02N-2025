@@ -130,7 +130,7 @@ public class Calculadora_frame extends JFrame implements ActionListener {
                     if (validateFields()) {
                         double[] numbers = parseValuesToDouble(num1_Field.getText(), num2_Field.getText());
                         double resultadoSubtracao = calculadora.subtrairNumeros(numbers[0], numbers[1]);
-                        resultado.setText("Resultado da soma é : " + resultadoSubtracao);
+                        resultado.setText("Resultado da subtração é : " + resultadoSubtracao);
                     }
                     break;
 
@@ -138,7 +138,7 @@ public class Calculadora_frame extends JFrame implements ActionListener {
                     if (validateFields()) {
                         double[] numbers = parseValuesToDouble(num1_Field.getText(), num2_Field.getText());
                         double resultadoMultiplicacao = calculadora.multiplicarNumeros(numbers[0], numbers[1]);
-                        resultado.setText("Resultado da soma é : " + resultadoMultiplicacao);
+                        resultado.setText("Resultado da multiplicação é : " + resultadoMultiplicacao);
                     }
                     break;
 
@@ -146,7 +146,7 @@ public class Calculadora_frame extends JFrame implements ActionListener {
                     if (validateFields()) {
                         double[] numbers = parseValuesToDouble(num1_Field.getText(), num2_Field.getText());
                         double resultadoDivisao = calculadora.dividirNumeros(numbers[0], numbers[1]);
-                        resultado.setText("Resultado da soma é : " + resultadoDivisao);
+                        resultado.setText("Resultado da divisão é : " + resultadoDivisao);
                     }
                     break;
 
