@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CalculadoraPlantas {
+public class calculadoraPlantas {
     
 
     static class Venda {
