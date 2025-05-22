@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 
 
-public class Calculadora {
+public class Calculadoras {
 
     public static Scanner scanner = new Scanner(System.in);
 
