@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-// Exception personalizada
 class InvalidInputException extends Exception {
     public InvalidInputException(String message) {
         super(message);
@@ -11,7 +10,6 @@ class InvalidInputException extends Exception {
 
 public class CalculadoraSwing extends JFrame implements ActionListener {
 
-    // Componentes da interface
     private JTextField campoNumero1, campoNumero2;
     private JButton botaoSoma, botaoSubtrai, botaoMultiplica, botaoDivide;
     private JLabel labelResultado;
@@ -22,10 +20,8 @@ public class CalculadoraSwing extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Layout
         setLayout(new GridLayout(5, 2, 5, 5));
 
-        // Componentes
         add(new JLabel("Número 1:"));
         campoNumero1 = new JTextField();
         add(campoNumero1);
@@ -58,7 +54,6 @@ public class CalculadoraSwing extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    // Método para obter e validar os números
     private double obterNumero(String texto) throws InvalidInputException {
         try {
             return Double.parseDouble(texto);
