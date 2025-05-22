@@ -1,5 +1,7 @@
 package calculadora;
 
-public class CalculadoraException {
-
+public class CalculadoraException extends Exception {
+    public CalculadoraException(String message) {
+        super(message);
+    }
 }
