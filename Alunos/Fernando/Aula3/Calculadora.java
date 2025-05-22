@@ -1,9 +1,13 @@
-package Aula2;;
+package Aula3;;
 
 public class Calculadora {
 
     public double calcularPrecoTotal(int quantidade, double preco) {
-        return quantidade * preco;
+        if (quantidade >= 10) {
+            return (quantidade * preco) * 0.95;
+        } else {
+            return quantidade * preco;
+        }
     }
 
     public double calcularTroco(double valorRecebido, double total) {
