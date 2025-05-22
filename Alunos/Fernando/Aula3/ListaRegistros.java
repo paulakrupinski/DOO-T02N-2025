@@ -22,6 +22,7 @@ public class ListaRegistros {
         int quantidade = scan.nextInt();
         System.out.println("Digite o preco da flor:");
         double preco = scan.nextDouble();
+        scan.nextLine(); 
         System.out.println("O preco total e: " + calculadora.calcularPrecoTotal(quantidade, preco));
         total = calculadora.calcularPrecoTotal(quantidade, preco);
         boolean comDesconto;
